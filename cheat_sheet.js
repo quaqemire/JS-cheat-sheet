@@ -154,6 +154,59 @@ console.log(sliceExample.trimEnd())     // '   exampleLol'
 
 // ========= OBJECTS ========
 
+// in, hasOwnProperty() - проверяет, есть ли какое-то свойство в объекте
+// toString(), JSON.stringify(), JSON.parse() - приведение объекта к строке и из строки в объект
+// for in - можно бегать по объекту при помощи цикла
+// Object.keys(), Object.entries(), Object.values() - а можно перевести объект в массив и работать с ним соответственно
+// {} === {} // false - сравнение объектов приводит к false из-за нахождения в разных ячейках памяти
+
+const user = {
+    name: 'Alex',
+    age: undefined,
+    family: {
+        dad: {
+            name: 'Maksat'
+        },
+        mom: {
+            name: 'Gulzar'
+        }
+    }
+}
+
+console.log('age' in user) // true
+console.log(user.hasOwnProperty('age')) // true
+
+console.log(user.toString()) // [object Object]
+const strObj = JSON.stringify(user)
+console.log(strObj) // {"name":"Alex"} - поле со значением undefined пропадает, null отображается
+console.log(JSON.parse(strObj)) // {name: 'Alex'}
+
+for (let i in user.family) {
+    const value = user.family[i];
+    console.log(i, value)
+}
+
+console.log(Object.keys(user)) // достает ключи объекта
+console.log(Object.values(user)) // достает значения объекта
+console.log(Object.entries(user)) // 0: ['name', 'Alex'] и т.д.
+
+const entries = Object.entries(user)
+
+for (let i = 0; i < entries.length; i++) {
+    const entry = entries[i]
+    const key = entry[0]
+    const value = entry[1]
+
+    console.log(key, value)
+}
+
+const obj1 = { test: 'hello'}
+const obj2 = { test: 'hello'}
+console.log(obj1 === obj2) // false
+
+const obj3 = { test: 'hello'}
+const obj4 = obj3
+console.log(obj3 === obj4) // true
 
 
 
