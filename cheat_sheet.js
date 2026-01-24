@@ -213,6 +213,109 @@ console.log(obj3 === obj4) // true
 
 // ========= ARRAYS ========
 
+// Array.isArray() - проверяет являтся ли тип массивом
+// push() - добавляет в конец
+// unshift() - добавляет в начало
+// pop() - удаляет с конца
+// shift() - удаляет с начала
+// concat() - складывает массивы(конкатенирует)
+// includes() - проверяет на наличие содержимого
+// split() и join() - переводит со строки в массив/с массива в строку
+
+// flat() - позволяет сделать наш массив плоским
+// reverse() - разворачивает массив
+
+// forEach() - перебирает массив
+// sort() - сортирует данные
+
+// slice(), splice() - вырезает массив по переданным индексам
+
+// find/some()
+// filter()
+// map()
+// reduce()
+
+const myArray = [1, 2, 3]
+const myArray2 = [4, 5, 6]
+myArray.push(4)
+myArray.unshift(4)
+console.log(myArray) // [4, 1, 2, 3, 4]
+
+myArray.pop(4)
+myArray.shift(4)
+console.log(myArray) // [1, 2, 3]
+
+const final = myArray.concat(myArray2)
+console.log(final) // [1, 2, 3, 4, 5, 6]
+
+console.log(final.includes(6)) // true
+
+const myFlatArray = [[1, 2], [[3]], [4], [5]];
+console.log(myFlatArray.flat(Infinity)) // [1, 2, 3, 4, 5]
+
+const reverseArray = [3, 2, 1]
+console.log(reverseArray.reverse()) // [1, 2, 3]
+
+const Array = [1, 2, 3, 4]
+Array.forEach((element) => {
+    console.log(element)
+})
+
+Array.filter((element) => {})
+
+Array.map((element) => {
+    return element
+})
+
+const reduceArr = ['Orange', 'Banana', 'Apple']
+
+// const result = reduceArr.reduce((acc, element) => {
+//     acc[`name-${element}`] = element
+//     return acc
+// }, [])
+const result = reduceArr.reduce((acc, element) => {
+    acc += element
+    return acc
+}, '')
+console.log(result)
+
+const reduceArr2 = [1, 2, 3, 4, 5]
+
+const result2 = reduceArr2.reduce((acc, element) => {
+    acc += element
+    return acc
+}, 0)
+
+console.log(result2)
+
+const result3 = reduceArr2.reduce((acc, element) => {
+    acc.push(element.toString())
+    return acc
+}, [])
+
+console.log(result3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
